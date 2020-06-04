@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.bossini.model.Aluno;
-import br.com.bossini.repository.AlunosRepository;
+import br.com.bossini.service.AlunosService;
 
 @Controller
 @RequestMapping
 public class AlunosController {
 
 	@Autowired
-	private AlunosRepository repository;
+	private AlunosService alunosService;
 	
 	@GetMapping("/alunos")
 	public ModelAndView findAlunos() {
-		List<Aluno> alunos = repository.findAll();
+		List<Aluno> alunos = alunosService.listarTodos();
 		ModelAndView mv = new ModelAndView("alunos");
 		mv.addObject(new Aluno());
 		mv.addObject("alunos", alunos);
@@ -30,7 +30,7 @@ public class AlunosController {
 	
 	@PostMapping("/alunos")
 	public String createAlunos(Aluno aluno) {
-		repository.save(aluno);
+		alunosService.salvar(aluno);
 		return "redirect:/alunos";
 	}
 	

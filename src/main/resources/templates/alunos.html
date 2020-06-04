@@ -19,7 +19,8 @@
 				<form class="form-inline" method="post" style="margin: 20px 0" th:action="@{/alunos}" th:object="${aluno}">
 					<div class="form-group">
 						<input type="text" class="forma-control" placeholder="Nome" th:field="*{nome}"/>
-						<input type="text" class="forma-control" placeholder="Media" th:field="*{mediaNotas}"/>
+						<input type="text" class="forma-control" placeholder="Nota 1" th:field="*{nota1}"/>
+						<input type="text" class="forma-control" placeholder="Nota 2" th:field="*{nota2}"/>
 						<button type="submit" class="btn btn-primary">Adicionar</button>	
 					</div>
 				</form>
@@ -33,7 +34,7 @@
 					<tbody>
 						<tr th:each="aluno: ${alunos}">
 							<td th:text="${aluno.nome}"></td>
-							<td th:text="${aluno.mediaNotas}"></td>
+							<td th:text="${aluno.mediaFinal}"></td>
 							
 						</tr>
 					</tbody>

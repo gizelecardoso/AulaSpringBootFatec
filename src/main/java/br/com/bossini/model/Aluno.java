@@ -14,7 +14,10 @@ public class Aluno implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String nome;
-	private Double mediaNotas;
+	private Double nota1;
+	private Double nota2;
+	private Double mediaFinal;
+	
 	public Long getId() {
 		return id;
 	}
@@ -27,13 +30,25 @@ public class Aluno implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Double getMediaNotas() {
-		return mediaNotas;
+
+	public Double getNota1() {
+		return nota1;
 	}
-	public void setMediaNotas(Double mediaNotas) {
-		this.mediaNotas = mediaNotas;
+	public void setNota1(Double nota1) {
+		this.nota1 = nota1;
 	}
-	
+	public Double getNota2() {
+		return nota2;
+	}
+	public void setNota2(Double nota2) {
+		this.nota2 = nota2;
+	}
+	public Double getMediaFinal() {
+		return mediaFinal;
+	}
+	public void setMediaFinal(Double mediaFinal) {
+		this.mediaFinal = mediaFinal;
+	}
 	
 	
 	
